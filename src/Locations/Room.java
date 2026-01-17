@@ -31,7 +31,7 @@ public class Room {
         return null;
     }
 
-        public String getExitName() {
+    public String getExitName() {
         //TODO
         return "";
     }
