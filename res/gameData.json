@@ -26,7 +26,7 @@
       "isCollectible": true
     }
   ],
-  "characters": [
+  "charakters": [
     {
       "name": "Robot",
       "role": "neutralní",
@@ -34,7 +34,7 @@
       "notes": "Robot, který pomáhá hráči."
     }
   ],
-  "Rooms": [
+  "rooms": [
     {
       "name": "Cela",
       "description": "Malá místnost, ve které se hráč nachází na začátku hry. Obsahuje základní předměty pro únik.",

@@ -4,34 +4,36 @@ import Charakters.Charakter;
 import Items.Items;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Room {
     private String name;
     private String description;
     private boolean isLocked;
+    private String keyRequired;
     private Charakter npc;
-    private ArrayList<Items> items;
-    private ArrayList<Room> exits;
+    private ArrayList<String> lootTable;
+    private ArrayList<String> neighbors;
 
-    public Room(String name, String description, boolean isLocked) {
+
+    public Room(String name, String description, boolean isLocked, String keyRequired) {
         this.name = name;
         this.description = description;
         this.isLocked = isLocked;
-        this.items = new ArrayList<>();
-        this.exits = new ArrayList<>();
+        this.keyRequired = keyRequired;
+        this.lootTable = new ArrayList<>();
+        this.neighbors = new ArrayList<>();
     }
 
-    public void addExit(Room room) {
+    public void addNeighbors(Room room) {
         //TODO
     }
 
-    public Room getExit(String roomName) {
+    public Room getNeighbors(String roomName) {
         //TODO
         return null;
     }
 
-    public String getExitName() {
+    public String getNeighborsName() {
         //TODO
         return "";
     }
@@ -76,5 +78,9 @@ public class Room {
 
     public String getName() {
         return name;
+    }
+
+    public String getKeyRequired() {
+        return keyRequired;
     }
 }
