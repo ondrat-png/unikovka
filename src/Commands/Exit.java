@@ -2,7 +2,7 @@ package Commands;
 
 public class Exit implements Command{
     @Override
-    public String execute() {
+    public String execute(String command) {
         return "";
     }
 

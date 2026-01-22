@@ -12,21 +12,21 @@ public class Room {
     private boolean isLocked;
     private Charakter npc;
     private ArrayList<Items> items;
-    private HashMap<String,Room> exits;
+    private ArrayList<Room> exits;
 
     public Room(String name, String description, boolean isLocked) {
         this.name = name;
         this.description = description;
         this.isLocked = isLocked;
         this.items = new ArrayList<>();
-        this.exits = new HashMap<>();
+        this.exits = new ArrayList<>();
     }
 
-    public void addExit(Room room, String direction) {
+    public void addExit(Room room) {
         //TODO
     }
 
-    public Room getExit(String direction) {
+    public Room getExit(String roomName) {
         //TODO
         return null;
     }
