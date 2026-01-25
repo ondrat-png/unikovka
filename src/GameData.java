@@ -50,15 +50,27 @@ public class GameData {
 
     /**
      * Finds a specific location by its identifier.
-     * @param name the identifier of the location to be found
+     * @param id the identifier of the location to be found
      * @return the matching location
      */
-    public  Room findLocation(String name) {
+    public  Room findLocation(String id) {
         for (Room l : rooms) {
-            if (l.getName().equals(name)){
+            if (l.getId().equals(id)){
                 return l;
             }
         }
-        throw new IllegalArgumentException("Neexistuje lokace s id: " + name);
+        throw new IllegalArgumentException("Neexistuje lokace s id: " + id);
+    }
+
+
+    public void roomConnect(){
+        for (Room room : rooms) {
+                for (String neighbordId : room.getNeighborId()) {
+                    Room neighbords = findLocation(neighbordId);
+                    if (neighbords != null) {
+                        room.addNeighbors(neighbords);
+                    }
+                }
+        }
     }
 }

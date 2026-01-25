@@ -19,8 +19,7 @@ public class Inventory {
     }
 
     public Items getCurrentItem() {
-        //TODO
-        return null;
+        return currentItem;
     }
 
     public boolean isFull() {

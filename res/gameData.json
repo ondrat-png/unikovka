@@ -1,26 +1,31 @@
 {
   "items": [
     {
+      "id": "wire_piece",
       "name": "Kus drátu",
       "description": "Item, který se nachazí ve startovní místnosti hrače. Díky němu hráč může otevřít dveře.",
       "isCollectible": true
     },
     {
+      "id": "crowbar",
       "name": "Pačidlo",
       "description": "Item, který slouží k otevření skříně",
       "isCollectible": true
     },
     {
+      "id": "fuse",
       "name": "Pojistka",
       "description": "Item, který slouží k nahození elektřiny",
       "isCollectible": true
     },
     {
+      "id": "safe_code",
       "name": "Kód k sejfu",
       "description": "Item, který slouží k otevření sejfu",
       "isCollectible": true
     },
     {
+      "id": "id_card",
       "name": "ID karta",
       "description": "Item, který slouží k otevření dveří do výtahu",
       "isCollectible": true
@@ -28,6 +33,7 @@
   ],
   "charakters": [
     {
+      "id": "robot",
       "name": "Robot",
       "role": "neutralní",
       "homeLocation": "Kancelář",
@@ -36,56 +42,64 @@
   ],
   "rooms": [
     {
+      "id": "cell_room",
       "name": "Cela",
-      "description": "Malá místnost, ve které se hráč nachází na začátku hry. Obsahuje základní předměty pro únik.",
-      "neighbors": ["Chodba"],
-      "lootTable": ["Kus drátu"],
-      "isLocked": true,
-      "keyRequired": "Kus drátu"
+      "description": "Malá místnost, ve které se hráč nachází na začátku hry.",
+      "neighbors": ["hallway_room"],
+      "lootTable": ["wire_piece"],
+      "isLocked": false,
+      "keyRequired": "wire_piece"
 
     },
     {
+      "id": "hallway_room",
       "name": "Chodba",
       "description": "Temná chodba, slouží jako křižovatka",
-      "neighbors": ["Cela", "Sklad", "Strojovna", "Kancelář"]
+      "neighbors": ["cell_room", "storage_room", "engine_room", "office_room" ]
     },
     {
+      "id": "storage_room",
       "name": "Sklad",
       "description": "Místnost plná harampádí. Nachází se zde páčidlo.",
-      "neighbors": ["Chodba"],
-      "lootTable": ["Pačidlo"]
+      "neighbors": ["hallway_room"],
+      "lootTable": ["crowbar"]
     },
     {
+      "id": "engine_room",
       "name": "Strojovna",
       "description": "Tmavá místnost plná strojů. Nachází se zde pojistka.",
-      "neighbors": ["Chodba"],
-      "lootTable": ["Pojistka"]
+      "neighbors": ["hallway_room"],
+      "lootTable": ["fuse"]
     },
     {
+      "id": "office_room",
       "name": "Kancelář",
       "description": "Modernější místnost s trezorem. Nachází se zde robot.",
-      "neighbors": ["Chodba", "Laboratoř", "Výtah"],
-      "lootTable": ["ID karta"],
+      "neighbors": ["hallway_room", "laboratory_room", "elevator_room"],
+      "lootTable": ["id_card"],
       "isLocked": true,
-      "keyRequired": "Pojistka"
+      "keyRequired": "fuse"
     },
     {
+      "id": "laboratory_room",
       "name": "Laboratoř",
       "description": "Místnost plná vědeckého vybavení. Nachází se zde kód k sejfu.",
-      "neighbors": ["Kancelář"],
-      "lootTable": ["Kód k sejfu"]
+      "neighbors": ["office_room"],
+      "lootTable": ["safe_code"]
     },
     {
+      "id": "elevator_room",
       "name": "Výtah",
       "description": "Je poškozený. Vyveze hráče na povrch, pokud má ID kartu.",
-      "neighbors": ["Kancelář", "Povrch"],
+      "neighbors": ["office_room", "surface_room"],
       "isLocked": true,
-      "keyRequired": "ID karta"
+      "keyRequired": "id_card"
     },
     {
+      "id": "surface_room",
       "name": "Povrch",
       "description": "Hráč je na čerstvém vzduchu a unikl.",
-      "neighbors": ["Výtah"]
+      "neighbors": ["elevator_room"]
     }
   ]
 }

@@ -2,40 +2,75 @@ package Locations;
 
 import Charakters.Charakter;
 import Items.Items;
-
 import java.util.ArrayList;
 
 public class Room {
+    private String id;
     private String name;
     private String description;
     private boolean isLocked;
     private String keyRequired;
     private Charakter npc;
-    private ArrayList<String> lootTable;
+    //soubory(ID)
     private ArrayList<String> neighbors;
+    private ArrayList<String> lootTable;
+    //objkety(hra)
+    private ArrayList<Items> itemsInRoom;
+    private ArrayList<Room> neighboringRooms;
 
 
-    public Room(String name, String description, boolean isLocked, String keyRequired) {
+    public Room(String id,String name, String description, boolean isLocked, String keyRequired) {
+        this(); //volani prazdneho konstruktoru, ktery inicializuje
+        this.id = id;
         this.name = name;
         this.description = description;
         this.isLocked = isLocked;
         this.keyRequired = keyRequired;
-        this.lootTable = new ArrayList<>();
+    }
+
+    //prazdny konstruktor pro GSON
+    public Room(){
         this.neighbors = new ArrayList<>();
+        this.lootTable = new ArrayList<>();
+        this.itemsInRoom = new ArrayList<>();
+        this.neighboringRooms = new ArrayList<>();
     }
 
+    //pro GSON(ID)
+    public ArrayList<String> getNeighborId() {
+        return neighbors;
+    }
+
+    public ArrayList<String> getLootTableId(){
+        return lootTable;
+    }
+
+    //pro praci se sousedy
     public void addNeighbors(Room room) {
-        //TODO
+        if (!neighboringRooms.contains(room)) {
+            neighboringRooms.add(room);
+        }
     }
 
-    public Room getNeighbors(String roomName) {
-        //TODO
+    public Room getNeighborsByName(String neighborName) {
+        for (Room room : neighboringRooms) {
+            if (room.getName().equalsIgnoreCase(neighborName)) {
+                return room;
+            }
+        }
         return null;
     }
 
+
     public String getNeighborsName() {
-        //TODO
-        return "";
+        if (neighboringRooms.isEmpty()){
+            return "Žádné sousední místnosti.";
+        }
+        ArrayList<String> names = new ArrayList<>();
+        for (Room room : neighboringRooms) {
+            names.add(room.getName());
+        }
+        return String.join(", ", names);
     }
 
     public Items addItem(Items item) {
@@ -53,27 +88,28 @@ public class Room {
         return null;
     }
 
+    public ArrayList<Items> getItemsInRoom() {
+        return itemsInRoom;
+    }
+
     public void setCharakter(Charakter npc) {
-        //TODO
+        this.npc = npc;
     }
 
     public Charakter getCharakter() {
-        //TODO
-        return null;
+        return npc;
     }
 
     public boolean isLocked() {
-        //TODO
-        return false;
+        return isLocked;
     }
 
     public void setLocked(boolean locked) {
-        //TODO
+        isLocked = locked;
     }
 
     public String getDescription() {
-        //TODO
-        return "";
+        return description;
     }
 
     public String getName() {
@@ -82,5 +118,23 @@ public class Room {
 
     public String getKeyRequired() {
         return keyRequired;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", isLocked=" + isLocked +
+                ", keyRequired='" + keyRequired + '\'' +
+                ", npc=" + npc +
+                ", lootTable=" + lootTable +
+                ", neighbors=" + neighbors +
+                '}';
     }
 }
