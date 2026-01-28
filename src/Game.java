@@ -1,8 +1,8 @@
 import Charakters.Player;
-import Commands.Command;
-import Commands.Move;
+import Commands.*;
 
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class Game {
 
@@ -10,9 +10,11 @@ public class Game {
     private Player player;
     private GameData world;
     private HashMap<String, Command> commands;
+    private Scanner scanner;
 
     public Game() {
         this.gameOver = false;
+        this.scanner = new Scanner(System.in);
     }
 
     public void inicialization() {
@@ -23,25 +25,31 @@ public class Game {
 
         commands = new HashMap<>();
         commands.put("jdi", new Move(player));
+        commands.put("pomoc", new Help());
+        //commands.put("napoveda", new Hint(player));
+        commands.put("konec", new Exit());
 
-        System.out.println("items: " + world.items.size());
-        System.out.println("charakters: " + world.charakters.size());
-        System.out.println("rooms: " + world.rooms.size());
+        while (gameOver == false) {
+            System.out.print(">>> ");
+            String input = scanner.nextLine();
+            String[] parts = input.split(" ", 2);
+            String commandWord = parts[0];
+
+            Command command = commands.get(commandWord);
+            if (command != null) {
+                String result = command.execute(input);
+                System.out.println(result);
+                if (command.exit()) {
+                    gameOver = true;
+                }
+            } else {
+                System.out.println("Neznamy prikaz");
+            }
+        }
     }
 
     public void start() {
         // TODO game logic
         inicialization();
-
-        System.out.println(player.getCurrentRoom().getName());
-        System.out.println(player.getCurrentRoom().getDescription());
-        System.out.println("Sousedni mistnosti: " + player.getCurrentRoom().getNeighborsName());
-
-        Command moveCommand = commands.get("jdi");
-        String result = moveCommand.execute("jdi chodba");
-        System.out.println(result);
     }
-
-
-
 }
