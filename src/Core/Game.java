@@ -31,6 +31,7 @@ public class Game {
         //commands.put("napoveda", new Hint(player));
         commands.put("konec", new Exit());
         commands.put("prohledat", new Search(player, world));
+        commands.put("inventar", new CommandInventory(player));
 
         while (gameOver == false) {
             System.out.print(">>> ");
