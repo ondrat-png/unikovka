@@ -8,22 +8,31 @@ public class Inventory {
         this.currentItem = null;
     }
 
-    public boolean addItem(Items item) {
-        //TODO
-        return false;
-    }
-
-    public Items removeItem() {
-        //TODO
-        return null;
-    }
-
     public Items getCurrentItem() {
         return currentItem;
     }
 
+    public boolean addItem(Items item) {
+
+        if (currentItem != null) {
+            return false;
+        }
+        currentItem = item;
+        return true;
+    }
+
+    public Items removeItem() {
+
+        Items items = currentItem;
+        currentItem = null;
+        return items;
+    }
+
     public boolean isFull() {
-        //TODO
+
+        if (currentItem != null) {
+            return true;
+        }
         return false;
     }
 }
