@@ -1,3 +1,5 @@
+package Core;
+
 import Charakters.Player;
 import Commands.*;
 
@@ -28,6 +30,7 @@ public class Game {
         commands.put("pomoc", new Help());
         //commands.put("napoveda", new Hint(player));
         commands.put("konec", new Exit());
+        commands.put("prohledat", new Search(player, world));
 
         while (gameOver == false) {
             System.out.print(">>> ");

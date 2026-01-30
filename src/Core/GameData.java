@@ -1,3 +1,5 @@
+package Core;
+
 import Charakters.Charakter;
 import Items.Items;
 import Locations.Room;
@@ -21,7 +23,7 @@ public class GameData {
     /**
      * Loads game data from a JSON file.
      * @param resourcePath path to the resource file
-     * @return a GameData object filled with the loaded data
+     * @return a Core.GameData object filled with the loaded data
      */
     public static GameData loadGameDataFromResources(String resourcePath) {
         //Vytvoření objektu pro práci s JSON souborem
@@ -36,7 +38,7 @@ public class GameData {
                         " (zkontrolujte, že soubor je v src/main/resources).");
             }
 
-            //Přečte celý JSON a vytvoří instanci GameData, naplní vlastnosti podle názvů klíčů v JSONU, vrátí se hotová třída GameData
+            //Přečte celý JSON a vytvoří instanci Core.GameData, naplní vlastnosti podle názvů klíčů v JSONU, vrátí se hotová třída Core.GameData
             return gson.fromJson(
                     new InputStreamReader(is, StandardCharsets.UTF_8),
                     GameData.class
@@ -73,4 +75,15 @@ public class GameData {
                 }
         }
     }
+
+    public Items findItemById(String itemId){
+        for (Items item : items) {
+            if (item.getId().equals(itemId)){
+                return item;
+            }
+        }
+        return null;
+    }
+
+
 }
