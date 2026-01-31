@@ -14,32 +14,31 @@ public class Hint implements Command{
     @Override
     public String execute(String command) {
 
-        if (p.getCurrentRoom().getId().equals("cell_room")){
-            Items currentItem = p.getInventory().getCurrentItem();
-            if (currentItem == null || !currentItem.getId().equals("wire_piece")){
-                return "Potřebuješ kus drátu";
-            }
-            return "Pak můžeš odejít";
+        String roomId = p.getCurrentRoom().getId();
+        Items currentItem = p.getInventory().getCurrentItem();
+
+        switch (roomId) {
+            case "cell_room":
+                if (currentItem == null || !currentItem.getId().equals("wire_piece")) {
+                    return "Potřebuješ kus drátu";
+                }
+                return "Pak můžeš odejít";
+
+            case "office_room":
+                if (currentItem == null || !currentItem.getId().equals("fuse")) {
+                    return "Potřebuješ pojistku";
+                }
+                return "Pak můžeš odejít";
+
+
+            case "elevator_room":
+                if (currentItem == null || !currentItem.getId().equals("id_card")) {
+                    return "Potřebuješ ID kartu";
+                }
+                return "Pak můžeš odejít";
+            default:
+                return "Zkus prohledat místnost";
         }
-
-        if (p.getCurrentRoom().getId().equals("office_room")){
-            Items currentItem = p.getInventory().getCurrentItem();
-            if (currentItem == null || !currentItem.getId().equals("fuse")){
-                return "Potřebuješ pojistky";
-            }
-            return "pak můžeš odejít";
-
-        }
-
-        if (p.getCurrentRoom().getId().equals("elevator_room")){
-            Items currentItem = p.getInventory().getCurrentItem();
-            if (currentItem == null || !currentItem.getId().equals("id_card")){
-            return "Potřebuješ Id kartu";
-            }
-            return "pak můžeš odejít";
-        }
-
-        return "zkus prohledat místnost";
     }
 
     @Override
