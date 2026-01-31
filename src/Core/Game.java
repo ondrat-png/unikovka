@@ -28,7 +28,7 @@ public class Game {
         commands = new HashMap<>();
         commands.put("jdi", new Move(player));
         commands.put("pomoc", new Help());
-        //commands.put("napoveda", new Hint(player));
+        commands.put("napoveda", new Hint(player));
         commands.put("konec", new Exit());
         commands.put("prohledat", new Search(player, world));
         commands.put("inventar", new CommandInventory(player));
