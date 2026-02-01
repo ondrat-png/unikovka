@@ -15,7 +15,6 @@ public class Room {
     private ArrayList<String> neighbors;
     private ArrayList<String> lootTable;
     //objkety(hra)
-    private ArrayList<Items> itemsInRoom;
     private ArrayList<Room> neighboringRooms;
 
 
@@ -32,7 +31,6 @@ public class Room {
     public Room(){
         this.neighbors = new ArrayList<>();
         this.lootTable = new ArrayList<>();
-        this.itemsInRoom = new ArrayList<>();
         this.neighboringRooms = new ArrayList<>();
     }
 
@@ -71,25 +69,6 @@ public class Room {
             names.add(room.getName());
         }
         return String.join(", ", names);
-    }
-
-    public Items addItem(Items item) {
-        //TODO
-        return null;
-    }
-
-    public Items removeItem(String item) {
-        //TODO
-        return null;
-    }
-
-    public Items getItem(String item) {
-        //TODO
-        return null;
-    }
-
-    public ArrayList<Items> getItemsInRoom() {
-        return itemsInRoom;
     }
 
     public void setCharakter(Charakter npc) {
