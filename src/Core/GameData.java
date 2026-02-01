@@ -85,5 +85,14 @@ public class GameData {
         return null;
     }
 
+    public void roomCharakter(){
+        for (Charakter c : charakters) {
+            Room room = findLocation(c.getHomeLocation());
+            if (room != null) {
+                room.setCharakter(c);
+            }
+        }
+    }
+
 
 }

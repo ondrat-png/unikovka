@@ -22,6 +22,7 @@ public class Game {
     public void inicialization() {
         world = GameData.loadGameDataFromResources("/gameData.json");
         world.roomConnect();
+        world.roomCharakter();
 
         player = new Player("player", world.findLocation("cell_room"));
 
@@ -35,6 +36,7 @@ public class Game {
         commands.put("vezmi", new PickUp(player, world));
         commands.put("zahodit", new Drop(player));
         commands.put("otevrit", new Use(player, world));
+        commands.put("mluv", new Dialogue(player));
 
         while (gameOver == false) {
             System.out.print(">>> ");

@@ -35,9 +35,9 @@
     {
       "id": "robot",
       "name": "Robot",
+      "dialogue": "Upozornění: Přístup do laboratoře vyžaduje aktivaci elektřiny, musíš najít pojistku.",
       "role": "neutralní",
-      "homeLocation": "office_room",
-      "notes": "Robot, který pomáhá hráči."
+      "homeLocation": "office_room"
     }
   ],
   "rooms": [
@@ -60,21 +60,21 @@
     {
       "id": "storage_room",
       "name": "Sklad",
-      "description": "Místnost plná harampádí. Nachází se zde páčidlo.",
+      "description": "Místnost plná harampádí.",
       "neighbors": ["hallway_room"],
       "lootTable": ["crowbar"]
     },
     {
       "id": "engine_room",
       "name": "Strojovna",
-      "description": "Tmavá místnost plná strojů. Nachází se zde pojistka.",
+      "description": "Tmavá místnost plná strojů.",
       "neighbors": ["hallway_room"],
       "lootTable": [""]
     },
     {
       "id": "office_room",
       "name": "Kancelář",
-      "description": "Modernější místnost s trezorem. Nachází se zde robot.",
+      "description": "Modernější místnost s trezorem.",
       "neighbors": ["hallway_room", "laboratory_room", "elevator_room"],
       "lootTable": [""],
       "isLocked": true,
@@ -83,7 +83,7 @@
     {
       "id": "laboratory_room",
       "name": "Laboratoř",
-      "description": "Místnost plná vědeckého vybavení. Nachází se zde kód k sejfu.",
+      "description": "Místnost plná vědeckého vybavení.",
       "neighbors": ["office_room"],
       "lootTable": ["safe_code"]
     },
