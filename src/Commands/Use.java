@@ -27,7 +27,7 @@ public class Use implements Command{
         Room currentRoom = p.getCurrentRoom();
         Items currentItem = p.getInventory().getCurrentItem();
 
-        if (currentRoom.getId().equals("storage_room") && targetName.equals("skříň") ){
+        if (currentRoom.getId().equals("engine_room") && targetName.equals("skříň") ){
             if (currentItem == null || !currentItem.getId().equals("crowbar")){
                 return "Potřebuješ páčidlo";
             }
