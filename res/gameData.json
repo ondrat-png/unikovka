@@ -8,7 +8,7 @@
     },
     {
       "id": "crowbar",
-      "name": "Pačidlo",
+      "name": "Páčidlo",
       "description": "Item, který slouží k otevření skříně",
       "isCollectible": true
     },
@@ -69,14 +69,14 @@
       "name": "Strojovna",
       "description": "Tmavá místnost plná strojů. Nachází se zde pojistka.",
       "neighbors": ["hallway_room"],
-      "lootTable": ["fuse"]
+      "lootTable": [""]
     },
     {
       "id": "office_room",
       "name": "Kancelář",
       "description": "Modernější místnost s trezorem. Nachází se zde robot.",
       "neighbors": ["hallway_room", "laboratory_room", "elevator_room"],
-      "lootTable": ["id_card"],
+      "lootTable": [""],
       "isLocked": true,
       "keyRequired": "fuse"
     },

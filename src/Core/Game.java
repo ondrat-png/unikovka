@@ -32,8 +32,9 @@ public class Game {
         commands.put("konec", new Exit());
         commands.put("prohledat", new Search(player, world));
         commands.put("inventar", new CommandInventory(player));
-        commands.put("sebrat", new PickUp(player, world));
+        commands.put("vezmi", new PickUp(player, world));
         commands.put("zahodit", new Drop(player));
+        commands.put("otevrit", new Use(player, world));
 
         while (gameOver == false) {
             System.out.print(">>> ");
