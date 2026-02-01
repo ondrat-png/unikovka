@@ -35,7 +35,7 @@ public class Search implements Command{
             }
         }
 
-        if (currentRoom.getId().equals("storage_room")) {
+        if (currentRoom.getId().equals("engine_room")) {
             result += "V místnosti se nachází zamčená skříň\n";
         }
 
