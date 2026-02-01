@@ -35,10 +35,20 @@ public class Search implements Command{
             }
         }
 
+        if (currentRoom.getId().equals("storage_room")) {
+            result += "V místnosti se nachází zamčená skříň\n";
+        }
+
+        if (currentRoom.getId().equals("laboratory_room")) {
+            result += "V místnosti se nachází zamčený sejf\n";
+        }
+
          Charakter npc = currentRoom.getCharakter();
          if (npc != null) {
              result += "V místnosti je: " + npc.getName() + "\n";
          }
+
+         result += "Sousedni místnosti: " + currentRoom.getNeighborsName() + "\n";
 
             return result;
     }
