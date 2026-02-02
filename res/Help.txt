@@ -1,0 +1,12 @@
+=================== příkazy, které může hráč použít ===============================
+  jdi (místnost)                                    = jdi místnost
+  konec                                             = konec hry
+  napoveda                                          = nápověda hráči
+  vezmi (předmět)                                   = hráč vezme item
+  zahodit                                           = hráč odhodí item
+  otevrit (objekt)                                  = použití itemu
+  prohledat                                         = prohledá item / objekt
+  inventar                                          = ukáže inventář
+  mluv                                              = mluvení s postavou
+  pomoc                                             = ukáže příkazy
+"===============================================================================;

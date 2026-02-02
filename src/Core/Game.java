@@ -37,6 +37,7 @@ public class Game {
         commands.put("zahodit", new Drop(player));
         commands.put("otevrit", new Use(player, world));
         commands.put("mluv", new Dialogue(player));
+        commands.put("mapa", new Mapa());
 
         while (gameOver == false) {
             System.out.print(">>> ");

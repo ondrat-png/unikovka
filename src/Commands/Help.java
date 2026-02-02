@@ -1,21 +1,25 @@
 package Commands;
 
+import java.io.*;
+
 public class Help implements Command{
     @Override
     public String execute(String command) {
-        return "\n================ příkazy, které může hráč použít ================\n" +
-                "jdi (místnost)                  = jdi místnost\n" +
-                "konec                           = konec hry\n" +
-                "napoveda                        = nápověda hráči\n" +
-                "vezmi (předmět)                 = hráč vezme item\n" +
-                "zahodit                         = hráč odhodí item\n" +
-                "otevrit (objekt)                = použití itemu\n" +
-                "prohledat                       = prohledá item/objekt\n" +
-                "inventar                        = ukáže inventář\n" +
-                "mluv                            = mluvení s postavou\n" +
-                "pomoc                           = ukáže příkazy\n" +
-                "=====================================================================\n";
 
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("res/Help.txt"));
+            String line = "";
+            while((line = bufferedReader.readLine()) != null){
+                System.out.println(line);
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        return "";
     }
 
     @Override
