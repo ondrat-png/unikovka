@@ -7,6 +7,7 @@
 ||  > konec             : Konec hry                              ||
 ||  > napoveda          : Zobrazit nápovědu                      ||
 ||  > pomoc             : Zobrazit tento seznam příkazů          ||
+||  > mapa              : Zobrazí mapu                           ||
 ||                                                               ||
 ||  INTERAKCE:                                                   ||
 ||  > vezmi (předmět)   : Hráč vezme item do inventáře           ||

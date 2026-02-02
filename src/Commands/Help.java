@@ -8,7 +8,7 @@ public class Help implements Command{
 
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader("res/Help.txt"));
-            String line = "";
+            String line;
             while((line = bufferedReader.readLine()) != null){
                 System.out.println(line);
             }

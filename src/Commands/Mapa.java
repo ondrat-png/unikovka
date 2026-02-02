@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.Buffer;
 
 public class Mapa implements Command{
 
@@ -13,7 +12,7 @@ public class Mapa implements Command{
 
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader("res/mapa.txt"));
-            String line = "";
+            String line;
             while ((line = bufferedReader.readLine()) != null) {
                 System.out.println(line);
             }
