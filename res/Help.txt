@@ -1,12 +1,23 @@
-=================== příkazy, které může hráč použít ===============================
-  jdi (místnost)                                    = jdi místnost
-  konec                                             = konec hry
-  napoveda                                          = nápověda hráči
-  vezmi (předmět)                                   = hráč vezme item
-  zahodit                                           = hráč odhodí item
-  otevrit (objekt)                                  = použití itemu
-  prohledat                                         = prohledá item / objekt
-  inventar                                          = ukáže inventář
-  mluv                                              = mluvení s postavou
-  pomoc                                             = ukáže příkazy
-"===============================================================================;
+===================================================================
+||               PŘÍKAZOVÝ PROTOKOL (COMMAND LIST)               ||
+===================================================================
+||                                                               ||
+||  ZÁKLADNÍ PŘÍKAZY:                                            ||
+||  > jdi (místnost)    : Jdi do určené místnosti                ||
+||  > konec             : Konec hry                              ||
+||  > napoveda          : Zobrazit nápovědu                      ||
+||  > pomoc             : Zobrazit tento seznam příkazů          ||
+||                                                               ||
+||  INTERAKCE:                                                   ||
+||  > vezmi (předmět)   : Hráč vezme item do inventáře           ||
+||  > zahodit           : Hráč odhodí item z inventáře           ||
+||  > otevrit (objekt)  : Použití itemu / otevření               ||
+||  > prohledat         : Prohledá místnost nebo objekt          ||
+||  > mluv              : Zahájí konverzaci s postavou           ||
+||                                                               ||
+||  STAV:                                                        ||
+||  > inventar          : Zobrazí obsah inventáře                ||
+||                                                               ||
+===================================================================
+||  SYSTEM MESSAGE: ČEKÁM NA VSTUP...                            ||
+===================================================================
