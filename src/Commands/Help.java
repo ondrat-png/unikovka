@@ -3,14 +3,22 @@ package Commands;
 import java.io.*;
 
 public class Help implements Command{
+
+    /**
+     * reading from file
+     * @param command full command entered by player
+     * @return help text
+     */
     @Override
     public String execute(String command) {
+
+        String helpLine = "";
 
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader("res/Help.txt"));
             String line;
             while((line = bufferedReader.readLine()) != null){
-                System.out.println(line);
+                helpLine += line + "\n";
             }
 
         } catch (FileNotFoundException e) {
@@ -19,7 +27,7 @@ public class Help implements Command{
             throw new RuntimeException(e);
         }
 
-        return "";
+        return helpLine;
     }
 
     @Override

@@ -7,14 +7,21 @@ import java.io.IOException;
 
 public class Mapa implements Command{
 
+    /**
+     * reading from file
+     * @param command full command entered by player
+     * @return map of the game
+     */
     @Override
     public String execute(String command) {
+
+        String mapaline = "";
 
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader("res/mapa.txt"));
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
+                mapaline += line + "\n";
             }
 
 
@@ -23,7 +30,7 @@ public class Mapa implements Command{
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return "";
+        return mapaline;
     }
 
     @Override
