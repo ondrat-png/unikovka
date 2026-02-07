@@ -12,6 +12,11 @@ public class Dialogue implements Command{
         this.p = p;
     }
 
+    /**
+     * Method to talk to NPC in current room
+     * @param command full command entered by player
+     * @return dialogue of the NPC or error message if there is no NPC in the room
+     */
     @Override
     public String execute(String command) {
 

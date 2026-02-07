@@ -11,6 +11,11 @@ public class CommandInventory implements Command{
         this.p = p;
     }
 
+    /**
+     * shows current item in players inventory
+     * @param command full command entered by player
+     * @return description and name of current item or message that inventory is empty
+     */
     @Override
     public String execute(String command) {
 

@@ -12,6 +12,11 @@ public class Drop implements Command{
         this.p = p;
     }
 
+    /**
+     * Method to drop current item from inventory to the current room
+     * @param command full command entered by player
+     * @return message about dropped item or error message if inventory is empty
+     */
     @Override
     public String execute(String command) {
 
