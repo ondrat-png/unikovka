@@ -11,6 +11,11 @@ public class Hint implements Command{
         this.p = p;
     }
 
+    /**
+     * Method to give player hint what item they need to leave the room
+     * @param command full command entered by player
+     * @return hint what item player needs to leave the room or search the room
+     */
     @Override
     public String execute(String command) {
 

@@ -17,6 +17,11 @@ public class Search implements Command{
         this.world = world;
     }
 
+    /**
+     * Method to search the current room for items, characters and neighboring rooms
+     * @param command full command entered by player
+     * @return items found in the room, characters in the room and neighboring rooms or message that nothing was found
+     */
     @Override
     public String execute(String command) {
 

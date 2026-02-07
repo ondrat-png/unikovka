@@ -15,6 +15,11 @@ public class Use implements Command{
         this.world = world;
     }
 
+    /**
+     * Method to use items on  objects in certain rooms
+     * @param command full command entered by player
+     * @return result of using the item on the object or error message if the item cannot be used here
+     */
     @Override
     public String execute(String command) {
 

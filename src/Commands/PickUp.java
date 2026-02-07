@@ -15,6 +15,12 @@ public class PickUp implements Command{
         this.world = world;
     }
 
+    /**
+     * Method to pick up items from the current room and add them to the player's inventory
+     * It checks if the item exists in the room and if the players inventory is full before adding the item.
+     * @param command full command entered by player
+     * @return items name and description or inventory is full or item does not exist in the room
+     */
     @Override
     public String execute(String command) {
 
