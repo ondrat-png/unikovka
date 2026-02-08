@@ -90,7 +90,7 @@
     {
       "id": "elevator_room",
       "name": "Výtah",
-      "description": "Je poškozený. Vyveze hráče na povrch, pokud má ID kartu.",
+      "description": "Je poškozený. Vyveze hráče na povrch.",
       "neighbors": ["office_room", "surface_room"],
       "isLocked": true,
       "keyRequired": "id_card"

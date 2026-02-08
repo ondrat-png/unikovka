@@ -44,7 +44,7 @@ public class Search implements Command{
             result += "V místnosti se nachází zamčená skříň\n";
         }
 
-        if (currentRoom.getId().equals("laboratory_room")) {
+        if (currentRoom.getId().equals("office_room")) {
             result += "V místnosti se nachází zamčený sejf\n";
         }
 

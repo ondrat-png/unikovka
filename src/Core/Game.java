@@ -49,6 +49,14 @@ public class Game {
             if (command != null) {
                 String result = command.execute(input);
                 System.out.println(result);
+
+                if (player.getCurrentRoom().getId().equals("surface_room")){
+                    System.out.println("====Gratulace====");
+                    System.out.println("Úspěšně jsi unikl z vězení\n");
+                    System.out.println("====Koenc hry====");
+                    gameOver = true;
+                }
+
                 if (command.exit()) {
                     gameOver = true;
                 }
@@ -59,7 +67,6 @@ public class Game {
     }
 
     public void start() {
-        // TODO game logic
         inicialization();
     }
 }

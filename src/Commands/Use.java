@@ -44,7 +44,7 @@ public class Use implements Command{
             return "Skříň už je otevřená";
         }
 
-        if (currentRoom.getId().equals("laboratory_room") && targetName.equals("sejf") ){
+        if (currentRoom.getId().equals("office_room") && targetName.equals("sejf") ){
             if (currentItem == null || !currentItem.getId().equals("safe_code")){
                 return "Potřebuješ kód k sejfu";
             }
