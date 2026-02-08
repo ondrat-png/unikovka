@@ -67,6 +67,11 @@ public class Game {
     }
 
     public void start() {
+        System.out.println("Vítej ve hře Únik z vězení");
+        System.out.println("Tvým cílem je uniknout z vězení a dostat se na povrch");
+        System.out.println("Zadej (pomoc) pro seznam příkazů");
+        System.out.println("Zadej (mapa) pro zobrazení mapy");
+
         inicialization();
     }
 }
