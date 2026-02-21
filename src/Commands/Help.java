@@ -13,9 +13,14 @@ public class Help implements Command{
     public String execute(String command) {
 
         String helpLine = "";
+        InputStream is = getClass().getClassLoader().getResourceAsStream("Help.txt");
+
+        if (is == null) {
+            return "Pomoc není k dispozici.";
+        }
 
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("res/Help.txt"));
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(is));
             String line;
             while((line = bufferedReader.readLine()) != null){
                 helpLine += line + "\n";

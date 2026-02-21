@@ -1,9 +1,6 @@
 package Commands;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class Mapa implements Command{
 
@@ -16,9 +13,14 @@ public class Mapa implements Command{
     public String execute(String command) {
 
         String mapaline = "";
+        InputStream is = getClass().getClassLoader().getResourceAsStream("mapa.txt");
+
+        if (is == null) {
+            return "Mapa není k dispozici.";
+        }
 
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("res/mapa.txt"));
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(is));
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 mapaline += line + "\n";
