@@ -30,8 +30,7 @@
     {
       "id": "robot",
       "name": "Robot",
-      "dialogue": "Upozornění: Přístup do laboratoře vyžaduje aktivaci elektřiny, musíš najít pojistku.",
-      "role": "neutralní",
+      "dialogue": "Upozornění: Potřebuješ najít klíč k otevření dveří.",
       "homeLocation": "office_room"
     }
   ],

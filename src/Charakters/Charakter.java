@@ -4,14 +4,12 @@ public class Charakter {
     private String id;
     private String name;
     private String dialogue;
-    private String role;
     private String homeLocation;
 
-    public Charakter(String id, String name, String dialogue, String role, String homeLocation) {
+    public Charakter(String id, String name, String dialogue, String homeLocation) {
         this.id = id;
         this.name = name;
         this.dialogue = dialogue;
-        this.role = role;
         this.homeLocation = homeLocation;
     }
 
@@ -27,10 +25,6 @@ public class Charakter {
         return dialogue;
     }
 
-    public String getRole() {
-        return role;
-    }
-
     public String getHomeLocation() {
         return homeLocation;
     }
@@ -41,7 +35,6 @@ public class Charakter {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", dialogue='" + dialogue + '\'' +
-                ", role='" + role + '\'' +
                 ", homeLocation='" + homeLocation + '\'' +
                 '}';
     }
