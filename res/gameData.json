@@ -3,32 +3,27 @@
     {
       "id": "wire_piece",
       "name": "Kus drátu",
-      "description": "Item, který se nachazí ve startovní místnosti hrače. Díky němu hráč může otevřít dveře.",
-      "isCollectible": true
+      "description": "Item, který se nachazí ve startovní místnosti hrače. Díky němu hráč může otevřít dveře."
     },
     {
       "id": "crowbar",
       "name": "Páčidlo",
-      "description": "Item, který slouží k otevření skříně",
-      "isCollectible": true
+      "description": "Item, který slouží k otevření skříně"
     },
     {
       "id": "fuse",
       "name": "Pojistka",
-      "description": "Item, který slouží k nahození elektřiny",
-      "isCollectible": true
+      "description": "Item, který slouží k nahození elektřiny"
     },
     {
       "id": "safe_code",
       "name": "Kód k sejfu",
-      "description": "Item, který slouží k otevření sejfu",
-      "isCollectible": true
+      "description": "Item, který slouží k otevření sejfu"
     },
     {
       "id": "id_card",
       "name": "ID karta",
-      "description": "Item, který slouží k otevření dveří do výtahu",
-      "isCollectible": true
+      "description": "Item, který slouží k otevření dveří do výtahu"
     }
   ],
   "charakters": [

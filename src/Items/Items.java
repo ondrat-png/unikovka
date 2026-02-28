@@ -5,13 +5,12 @@ public class Items {
     private String id;
     private String name;
     private String description;
-    private boolean isCollectible;
 
-    public Items(String id, String name, String description, boolean isCollectible) {
+
+    public Items(String id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.isCollectible = isCollectible;
     }
 
     public String getId() {
@@ -26,16 +25,11 @@ public class Items {
         return description;
     }
 
-    public boolean isCollectible() {
-        return isCollectible;
-    }
-
     @Override
     public String toString() {
         return "Items{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", isCollectible=" + isCollectible +
                 '}';
     }
 }
