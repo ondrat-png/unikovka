@@ -64,7 +64,10 @@ public class GameData {
         throw new IllegalArgumentException("Neexistuje lokace s id: " + id);
     }
 
-
+    /**
+     * Method to connect rooms based on their neighbor ID
+     * Converts String ID from JSON to actual Room objects, if the room exists
+     */
     public void roomConnect(){
         for (Room room : rooms) {
                 for (String neighbordId : room.getNeighborId()) {
@@ -76,6 +79,11 @@ public class GameData {
         }
     }
 
+    /**
+     * Method to find a specific item by its id.
+     * @param itemId to check if item with this id exists
+     * @return the matching item, or null if no such item exists
+     */
     public Items findItemById(String itemId){
         for (Items item : items) {
             if (item.getId().equals(itemId)){
@@ -85,6 +93,10 @@ public class GameData {
         return null;
     }
 
+    /**
+     * Method to place character in their home locations
+     * if the location exits the character will be placed there
+     */
     public void roomCharakter(){
         for (Charakter c : charakters) {
             Room room = findLocation(c.getHomeLocation());

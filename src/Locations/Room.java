@@ -50,6 +50,11 @@ public class Room {
         }
     }
 
+    /**
+     * Method to find a neighboring room by its name
+     * @param neighborName name of the neighboring room to find
+     * @return neighboring room with name, or null if no such room exists
+     */
     public Room getNeighborsByName(String neighborName) {
         for (Room room : neighboringRooms) {
             if (room.getName().equalsIgnoreCase(neighborName)) {
@@ -60,6 +65,10 @@ public class Room {
     }
 
 
+    /**
+     * Method to get new list of neighboring rooms names
+     * @return nothing or list of neighboring rooms names
+     */
     public String getNeighborsName() {
         if (neighboringRooms.isEmpty()){
             return "Žádné sousední místnosti.";
